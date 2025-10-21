@@ -4,23 +4,25 @@ import styled from 'styled-components';
 import { Paragrafo } from '../Barra';
 import { useNavigate } from 'react-router-dom';
 
-const GuardaForm=styled.div`
+export const GuardaForm=styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-`
 
-const FundoForm=styled.form`
+`
+ export const FundoForm=styled.div`
+position: relative;
   background-color: rgba(0, 0, 0, 0.7); 
   padding: 40px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 25vw;
-  height: 50vh;
-  gap: 30px;
+  align-items:center;
+  width: 50vh;
+  height: ${({$height})=> $height||"50%"};
+  gap: ${({$Gap})=> $Gap||"30px"};
+
 `
 const Textoh2=styled.h2`
   color: white;
@@ -30,11 +32,11 @@ const Textoh2=styled.h2`
   font-size: 60px;
 `
 
-const Inputs=styled.input`
+export const Inputs=styled.input`
   width: 85%;
-  height: 12%;
-  padding: 0 8px;
-  border-radius: 20px;
+height: 12%;
+  padding:${({ $Padding }) => $Padding || "0 8px"} ;
+  border-radius: 10px;
   border: none;
   outline: none;
   font-size: 20px;

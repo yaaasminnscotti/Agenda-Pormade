@@ -14,6 +14,7 @@ const FundoBarra = styled.div`
   justify-content: center;
   color: #fff;
   text-align: center;
+  z-index: 10;
 `;
 
 const FundoImgeTextos = styled.div`
