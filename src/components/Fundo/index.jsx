@@ -1,4 +1,5 @@
-import LoginDiv from '../login'
+
+import LoginDiv from '../FormLogin'
 import './fundo.css'
 
 export default function Fundo() {
