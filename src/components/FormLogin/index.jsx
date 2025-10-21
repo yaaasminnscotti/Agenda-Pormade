@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
 import Botao from '../Botao';
-import {useNavigate} from 'react-router-dom';
+
 
 export default function LoginDiv() {
   const [login, setLogin] = useState('');
@@ -9,7 +9,7 @@ export default function LoginDiv() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica de autenticação
+  
     console.log('Login:', login, 'Senha:', senha);
   };
 

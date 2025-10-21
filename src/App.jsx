@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CadastroDiv from "./components/Cadastro";
-import Login from "./pages/login";
+import CadastroDiv from './components/FormCadastro'
+import Login from "./pages/Login";
 
 
 export default function App(){

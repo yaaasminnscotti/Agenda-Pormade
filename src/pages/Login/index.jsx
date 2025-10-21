@@ -1,7 +1,6 @@
 import { useState } from 'react'
-
-import Fundo from '../../components/fundo'
-import Barra from '../../components/barra'
+import Fundo from '../../components/Fundo'
+import Barra from '../../components/Barra'
 import styled from 'styled-components'
 
 const Container=styled.div`
