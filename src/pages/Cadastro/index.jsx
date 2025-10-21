@@ -1,11 +1,13 @@
-import Barra from "../../components/barra";
-import Fundo from "../../components/fundo";
+import Barra from "../../components/Barra";
+import {FundoFundo} from "../../components/Fundo";
+import './Cadastro.css'
+
 
 export default function Cadastro(){
     return(
-    <Container>
-        <Fundo />
+    <>
+        <FundoFundo />
         <Barra  />
-    </Container>
+    </>
     )
 }

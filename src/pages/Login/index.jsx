@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import Fundo from '../../components/Fundo'
-import Barra from '../../components/Barra'
 import styled from 'styled-components'
+import './Login.css'
 
 const Container=styled.div`
     display:flex;
@@ -16,7 +15,7 @@ function Login() {
   return (
     <Container>
     <Fundo />
-   <Barra />
+
    
 </Container>
   )
