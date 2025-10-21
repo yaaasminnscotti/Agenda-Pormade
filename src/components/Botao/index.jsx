@@ -1,29 +1,33 @@
 import styled from "styled-components"
+import { useNavigate } from "react-router-dom";
 
 const BotaoEnviar= styled.button`
-font-size: 18px;
+    font-size: 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     color: #fff;
     line-height: 1.2;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px 40px;
     background: linear-gradient(to left, #14862d, #114223);
-    transition: .5s;
+     transition: 0.3s ease;
 
-    &:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-
-    }`
-
+  &:hover {
+    box-shadow: 0 0 7px #acca96; 
+    transform: scale(1.05);   
+  }
+`;
 export default function Botao(){
+    const navigate= useNavigate();
+
     return(
-    <BotaoEnviar> <a onClick={() => navigate("/cadastro")} style={{ cursor: "pointer" }}>
+    <BotaoEnviar>
+        <a onClick={() => navigate("/#")} style={{ cursor: "pointer" }}>
           Clique aqui
-        </a></BotaoEnviar>
+        </a>
+    </BotaoEnviar> 
     )
 }

@@ -1,9 +1,58 @@
 import React, { useState } from 'react';
-import './login.css';
 import Botao from '../Botao';
+import styled from 'styled-components';
+import { Paragrafo } from '../Barra';
+import { useNavigate } from 'react-router-dom';
 
+const GuardaForm=styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`
+
+const FundoForm=styled.form`
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  height: 50vh;
+  gap: 30px;
+`
+const Textoh2=styled.h2`
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 60px;
+`
+
+const Inputs=styled.input`
+  width: 85%;
+  height: 12%;
+  padding: 0 8px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+`
+
+const SpanParagrafo=styled.span`
+  color: #00b000;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
+`
 
 export default function LoginDiv() {
+const navigate=useNavigate();
+
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -14,26 +63,34 @@ export default function LoginDiv() {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-box" onSubmit={handleSubmit}>
-        <h2>Entrar</h2>
-        <input
+    <GuardaForm>
+      <FundoForm onSubmit={handleSubmit}>
+
+        <Textoh2>Entrar</Textoh2>
+        <Inputs
           type="text"
           placeholder="Login"
           value={login}
           onChange={(e) => setLogin(e.target.value)}
         />
-        <input
+
+        <Inputs
           type="password"
           placeholder="Senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
         />
+
         <Botao />
-        <p className="register-text">
-          Não tem uma conta? <span>Crie uma</span>
-        </p>
-      </form>
-    </div>
+
+        <Paragrafo $fontSize="20px" $fontalign="center">
+          Não tem uma conta? 
+              <SpanParagrafo onClick={() => navigate("/cadastro")} style={{ cursor: "pointer" }}>
+              Crie uma
+              </SpanParagrafo>
+        </Paragrafo>
+
+      </FundoForm>
+    </GuardaForm>
   );
 }
