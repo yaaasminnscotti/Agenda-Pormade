@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import './cadastro.css';
+import styled from 'styled-components';
+import {GuardaForm, FundoForm, Inputs} from '../FormLogin' 
+import Botao from '../Botao';
+
+
+const H2Cadastro=styled.h2`
+  color: #fff;
+  margin-top: auto;
+  font-size: 40px;
+  margin-bottom: 0;
+`
 
 export default function CadastroDiv  (){
 const [nome, setNome] = useState('');
@@ -11,52 +21,53 @@ const [nome, setNome] = useState('');
     e.preventDefault(); 
     console.log('Dados do cadastro:', { nome, email, telefone, senha });
 
-    // Aqui vai ser enviado para o backend com fetch/axios/cors
   };
 return(
-<form className="form-cadastro" onSubmit={handleSubmit}>
-      <h2>Cadastro</h2>
+<GuardaForm>
+<FundoForm $height="60%" $Gap="45px">
+  
+      <H2Cadastro>Cadastro</H2Cadastro>
 
-      <label>Nome:</label>
-      <input 
+      <Inputs 
         type="text" 
         value={nome} 
+        placeholder='Nome'
         onChange={(e) => setNome(e.target.value)} 
         required 
         autoComplete='off'
       />
 
-      <label>Email:</label>
-      <input 
+      <Inputs 
         type="email" 
         value={email} 
+        placeholder='E-mail'
         onChange={(e) => setEmail(e.target.value)} 
         required 
         autoComplete='off'
 
       />
 
-      <label>Telefone:</label>
-      <input 
+      <Inputs 
         type="tel" 
         value={telefone} 
+        placeholder='Telefone'
         onChange={(e) => setTelefone(e.target.value)} 
         required
         autoComplete='off'
- 
       />
 
-      <label>Senha:</label>
-      <input 
+      <Inputs 
         type="password" 
         value={senha} 
+        placeholder='Senha'
         onChange={(e) => setSenha(e.target.value)} 
         required 
         autoComplete='off'
       />
 
-      <button type="submit">Cadastrar</button>
-    </form>
+      <Botao />
+    </FundoForm>
+    </GuardaForm>
   );
 
 }
