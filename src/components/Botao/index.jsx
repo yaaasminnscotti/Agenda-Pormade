@@ -20,9 +20,20 @@ const BotaoEnviar= styled.button`
     transform: scale(1.05);   
   }
 `;
-export default function Botao({ onClick, children }) {
+export default function Botao({ onClick, children, redirectTo }) {
+  const navigate = useNavigate();
+
+  const handleClick = async (e) => {
+    if (onClick) {
+      await onClick(e); // chama o handleSubmit
+    }
+    if (redirectTo) {
+      navigate(redirectTo); // navega para a rota passada
+    }
+  };
+
   return (
-    <BotaoEnviar onClick={onClick}>
+    <BotaoEnviar onClick={handleClick}>
       {children || "Enviar"}
     </BotaoEnviar>
   );

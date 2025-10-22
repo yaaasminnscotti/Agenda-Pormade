@@ -90,7 +90,12 @@ return(
         autoComplete='off'
       />
 
-      <Botao onClick={handleSubmit}>Cadastrar</Botao>
+   <Botao
+  onClick={handleSubmit}  
+  redirectTo="/"   
+>
+  Cadastrar
+</Botao>
 
     </FundoForm>
     </GuardaForm>

@@ -83,7 +83,8 @@ const navigate=useNavigate();
           onChange={(e) => setSenha(e.target.value)}
         />
 
-        <Botao />
+        <Botao 
+        redirectTo={"/paginainicial"}/>
 
         <Paragrafo $fontSize="20px" $fontalign="center">
           Não tem uma conta? 
