@@ -14,14 +14,39 @@ const H2Cadastro=styled.h2`
 export default function CadastroDiv  (){
 const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
+  const [cargo, setCargo] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault(); 
-    console.log('Dados do cadastro:', { nome, email, telefone, senha });
+    const novoUsuario={ nome, email, cargo,  senha};
 
-  };
+
+      try {
+    const response = await fetch('http://localhost:3000/usuarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(novoUsuario)
+    });
+
+    if (response.ok) {
+      alert('Usuário cadastrado com sucesso!');
+      setNome('');
+      setEmail('');
+      setCargo('');
+      setSenha('');
+    } else {
+      const erro = await response.json();
+      alert('Erro ao cadastrar: ' + erro.message);
+    }
+  } catch (error) {
+    console.error('Erro de conexão:', error);
+    alert('Erro ao conectar ao servidor.');
+  }
+};
+
 return(
 <GuardaForm>
 <FundoForm $height="60%" $Gap="45px">
@@ -48,10 +73,10 @@ return(
       />
 
       <Inputs 
-        type="tel" 
-        value={telefone} 
-        placeholder='Telefone'
-        onChange={(e) => setTelefone(e.target.value)} 
+        type="text" 
+        value={cargo} 
+        placeholder='Cargo'
+        onChange={(e) => setCargo(e.target.value)} 
         required
         autoComplete='off'
       />
@@ -65,7 +90,7 @@ return(
         autoComplete='off'
       />
 
-      <Botao />
+      <Botao onclick={handleSubmit} />
     </FundoForm>
     </GuardaForm>
   );
