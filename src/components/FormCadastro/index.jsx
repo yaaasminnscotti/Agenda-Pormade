@@ -63,12 +63,11 @@ return(
       />
 
       <Inputs 
-        type="email" 
-        value={email} 
-        placeholder='E-mail'
-        onChange={(e) => setEmail(e.target.value)} 
-        required 
-        autoComplete='off'
+        type="email"
+        value={email}
+        placeholder="E-mail"
+        onChange={(e) => setEmail(e.target.value)}
+        autoComplete="new-email" 
 
       />
 
@@ -87,7 +86,7 @@ return(
         placeholder='Senha'
         onChange={(e) => setSenha(e.target.value)} 
         required 
-        autoComplete='off'
+        autoComplete='new-password'
       />
 
    <Botao
