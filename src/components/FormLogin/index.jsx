@@ -67,13 +67,16 @@ const navigate=useNavigate();
   return (
     <GuardaForm>
       <FundoForm onSubmit={handleSubmit}>
+<input type="text" style={{ position: 'absolute', opacity: 0, height: 0, width: 0 }} />
+<input type="password" style={{ position: 'absolute', opacity: 0, height: 0, width: 0 }} />
 
         <Textoh2>Entrar</Textoh2>
         <Inputs
           type="text"
-          placeholder="Login"
+          placeholder="login"
           value={login}
           onChange={(e) => setLogin(e.target.value)}
+          autoComplete='no-login-autocomplete'
         />
 
         <Inputs
@@ -81,6 +84,7 @@ const navigate=useNavigate();
           placeholder="Senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
+           autoComplete='off-senha'
         />
 
         <Botao 
