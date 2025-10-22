@@ -25,8 +25,8 @@ export default function Botao(){
 
     return(
     <BotaoEnviar>
-        <a onClick={() => navigate("/#")} style={{ cursor: "pointer" }}>
-          Clique aqui
+        <a onClick={() => navigate("/paginainicial")} style={{ cursor: "pointer" }}>
+          Acessar
         </a>
     </BotaoEnviar> 
     )

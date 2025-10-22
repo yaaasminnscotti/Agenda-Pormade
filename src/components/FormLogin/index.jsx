@@ -34,7 +34,7 @@ const Textoh2=styled.h2`
 
 export const Inputs=styled.input`
   width: 85%;
-height: 12%;
+height: 56px;
   padding:${({ $Padding }) => $Padding || "0 8px"} ;
   border-radius: 10px;
   border: none;
