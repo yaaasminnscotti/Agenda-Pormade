@@ -90,7 +90,8 @@ return(
         autoComplete='off'
       />
 
-      <Botao onclick={handleSubmit} />
+      <Botao onClick={handleSubmit}>Cadastrar</Botao>
+
     </FundoForm>
     </GuardaForm>
   );

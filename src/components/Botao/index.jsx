@@ -20,24 +20,11 @@ const BotaoEnviar= styled.button`
     transform: scale(1.05);   
   }
 `;
-export default function Botao() {
-  const navigate = useNavigate();
-
-<<<<<<< HEAD
+export default function Botao({ onClick, children }) {
   return (
-    <BotaoEnviar onClick={() => navigate("/cadastro")}>
-      Clique aqui
+    <BotaoEnviar onClick={onClick}>
+      {children || "Enviar"}
     </BotaoEnviar>
   );
 }
-  
-=======
-    return(
-    <BotaoEnviar>
-        <a onClick={() => navigate("/paginainicial")} style={{ cursor: "pointer" }}>
-          Acessar
-        </a>
-    </BotaoEnviar> 
-    )
-}
->>>>>>> 774ca6f0142d42368910e7bc0ee03bb9bbf15bc8
+
