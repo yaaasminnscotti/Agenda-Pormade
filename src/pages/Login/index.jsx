@@ -1,6 +1,6 @@
 import Fundo from '../../components/Fundo'
 import styled from 'styled-components'
-import './Login.css'
+import '../Cadastro/Cadastro.css'
 import Barra from '../../components/Barra'
 import LoginDiv from '../../components/FormLogin'
 

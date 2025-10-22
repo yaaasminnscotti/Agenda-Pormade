@@ -1,31 +1,32 @@
 import styled from 'styled-components'
 import Logo from '../../assets/images/folha.svg'
 
-const FundoBarra = styled.div`
+export const FundoBarra = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   height: 100vh;
   width: 20vw;
   background-image: linear-gradient(180deg, #1f1e1e, #000000);
-  display: flex;
+  display: flex;                                  
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: ${({ $JustifyContent }) => $JustifyContent || "center"} ;
   color: #fff;
   text-align: center;
   z-index: 10;
+  gap: 30px;
 `;
 
-const FundoImgeTextos = styled.div`
+export const FundoImgeTextos = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 30px;
+  padding: 55px;
 `;
 
-const ImgeTexto = styled.div`
+export const ImgeTexto = styled.div`
   display: flex;
   gap: 15px;
   margin-bottom: 40px;
@@ -42,19 +43,19 @@ export const Paragrafo = styled.p.withConfig({
   text-align: ${({ $fontalign }) => $fontalign || "right"};
 `;
 
-const LogoPormade = styled.img`
+export const LogoPormade = styled.img`
   width: 100px;
   height: auto;
 `;
 
-const TituloContainer = styled.div`
+export const TituloContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   line-height: 1;
 `;
 
-const PormadeAgenda = styled.h1`
+export const PormadeAgenda = styled.h1`
   color: #fff;
   font-size: 36px;
   font-weight: ${({ $fontWeight }) => $fontWeight || 700};
