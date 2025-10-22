@@ -23,6 +23,7 @@ const BotaoEnviar= styled.button`
 export default function Botao() {
   const navigate = useNavigate();
 
+<<<<<<< HEAD
   return (
     <BotaoEnviar onClick={() => navigate("/cadastro")}>
       Clique aqui
@@ -30,3 +31,13 @@ export default function Botao() {
   );
 }
   
+=======
+    return(
+    <BotaoEnviar>
+        <a onClick={() => navigate("/paginainicial")} style={{ cursor: "pointer" }}>
+          Acessar
+        </a>
+    </BotaoEnviar> 
+    )
+}
+>>>>>>> 774ca6f0142d42368910e7bc0ee03bb9bbf15bc8
