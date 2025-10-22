@@ -5,6 +5,7 @@ import Fundo from "../../components/Fundo";
 import Logo from "../../assets/images/folha.svg";
 import Nav from "../../components/Nav";
 import ConteudoExpandido from "../../components/ConteudoExpandido";
+import Pesquisa from "../../components/Pesquisa";
 
 const PaginaWrapper = styled.div`
   position: relative;
@@ -52,11 +53,8 @@ const PaginaInicial = () => {
             </ImgeTexto>
           </FundoImgeTextos>
 
-          {/* 🔹 Agora o Nav recebe o estado do pai */}
           <Nav ativo={ativo} setAtivo={setAtivo} />
         </FundoBarra>
-
-        {/* 🔹 E o ConteudoExpandido usa o mesmo estado */}
         <ConteudoExpandido ativo={ativo} />
       </ContainerPrincipal>
     </PaginaWrapper>
